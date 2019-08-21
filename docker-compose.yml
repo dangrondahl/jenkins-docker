@@ -1,0 +1,15 @@
+version: '3.1'
+
+volumes:
+  jenkins-data:
+    driver: local
+services: 
+  jenkins:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: jenkins-master
+    volumes:
+      - jenkins-data:/var/jenkins_home
+    ports:
+      - "8080:8080"
