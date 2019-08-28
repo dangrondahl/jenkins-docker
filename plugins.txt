@@ -72,3 +72,4 @@ pam-auth:1.5.1
 ldap:1.20
 email-ext:2.66
 blueocean:1.18.1
+configuration-as-code:1.29

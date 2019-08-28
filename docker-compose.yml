@@ -11,12 +11,9 @@ services:
     container_name: jenkins-master
     volumes:
       - jenkins-data:/var/jenkins_home
+      - ./casc_configs:/var/jenkins_home/casc_configs
     ports:
       - "8080:8080"
       - "50000:50000"
-  jenkins-ssh-slave:
-    image: "jenkins/ssh-slave"
-    ports:
-      - ${PORT}:22/tcp
     environment:
-      - JENKINS_SLAVE_SSH_PUBKEY=${JENKINS_SLAVE_SSH_PUBKEY}
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/casc_configs
