@@ -1,2 +1,47 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "GitHub creds"
+          id: "GitHub"
+          password: "someSecret"
+          scope: GLOBAL
+          username: "dangrondahl"
+
 jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+  numExecutors: 1
+
+unclassified:
+  globalLibraries:
+    libraries:
+      - name: "jsl-docker"
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                configuredByUrl: true
+                credentialsId: "GitHub"
+                id: "4ee293c3-70f1-41b0-a75d-05df4ecb7194"
+                repoOwner: "dangrondahl"
+                repository: "jsl-docker"
+                repositoryUrl: "https://github.com/dangrondahl/jsl-docker"
+                traits:
+                  - gitHubBranchDiscovery:
+                      strategyId: 1
+                  - originPullRequestDiscoveryTrait:
+                      strategyId: 1
+                  - gitHubForkDiscovery:
+                      strategyId: 1
+                      trust: "gitHubTrustPermissions"
+
+#  nodes:
+#  - permanent:
+#      labelString: "linux docker test"
+#      mode: NORMAL
+#      name: "utility-node"
+#      remoteFS: "/tmp/"
+#      launcher:
+#        jnlp:
+#          workDirSettings:
