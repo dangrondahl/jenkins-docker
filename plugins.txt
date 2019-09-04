@@ -103,3 +103,4 @@ matrix-project:latest
 workflow-support:latest
 momentjs:latest
 github:latest
+prometheus:latest
