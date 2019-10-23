@@ -104,3 +104,4 @@ workflow-support:latest
 momentjs:latest
 github:latest
 prometheus:latest
+docker-plugin:latest
